@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nginx-test
+    container_name: nginx-test_c
+    ports:
+      - 8081:80
+    volumes:
+      - ./config/default.conf:/etc/nginx/nginx.conf
+      - ./build:/usr/share/nginx/html
